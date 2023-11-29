@@ -38,4 +38,14 @@ export default class HashTable {
     return valuePair == null ? undefined : valuePair.value;
   }
   // 移除值
+  remove(key) {
+    const hash = this.hashCode(key);
+    const valuePair = this.table[hash];
+    if(valuePair != null) {  // 可能key不存在
+      delete this.table[hash];
+      return true;
+    }
+    return false;
+  }
+
 }
