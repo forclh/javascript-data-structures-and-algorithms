@@ -134,7 +134,7 @@ export default class LinkedList {
     return this.head
   }
 
-  // 答应链表(将LinkedList对象转换为字符串)
+  // 打印链表(将LinkedList对象转换为字符串)
   toString() {
     if(this.isEmpty()) {
       return '';
