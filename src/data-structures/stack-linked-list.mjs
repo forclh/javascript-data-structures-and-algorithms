@@ -1,5 +1,5 @@
 import DoublyLinkedList from "./doubly-linked-list.mjs";
-
+// 基于双向链表的栈
 export default class StackLinkedList {
   constructor() {
     this.items = new DoublyLinkedList();

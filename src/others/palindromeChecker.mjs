@@ -3,7 +3,6 @@ import Deque from '../data-structures/deque.mjs';
 
 
 // 回文数检查
-
 function palindromeChecker(aString) {
   // 字符检查
   if(aString === undefined || aString === null || (aString !== null && aString.length === 0)) {

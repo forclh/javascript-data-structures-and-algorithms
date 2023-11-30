@@ -2,7 +2,7 @@
 import Queue from '../data-structures/queue.mjs';
 
 
-
+// 击鼓传花
 function hotPotato(elementList, num) {
   const queue = new Queue();
   const eliminatedList = [];

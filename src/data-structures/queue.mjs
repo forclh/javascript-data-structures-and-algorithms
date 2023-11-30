@@ -1,4 +1,4 @@
-// 队列
+// 基于对象的队列
 export default class Queue {
   constructor() {
     this.count = 0;

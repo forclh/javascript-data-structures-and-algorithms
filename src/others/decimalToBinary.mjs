@@ -1,6 +1,7 @@
 // 基于对象的Stack类
 import Stack from '../data-structures/stack.mjs';
 
+// 十进制转二进制
 function decimalToBinary(decNumber) {
   const remStack = new Stack;
   let number = decNumber;

@@ -1,7 +1,7 @@
 import { defaultToString } from '../../util.mjs';
 import ValuePair from './models/value-pair.mjs';
 
-// 字典类
+// 自定义字典类
 export default class Dictionary {
   constructor(toStrFn = defaultToString) {
     this.toStrFn = toStrFn;

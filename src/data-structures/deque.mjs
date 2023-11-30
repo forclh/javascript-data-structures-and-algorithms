@@ -1,4 +1,4 @@
-// 双端队列
+// 双端队列类
 export default class Deque {
   constructor() {
     this.count = 0;

@@ -1,5 +1,4 @@
-// 栈（基于数组）
-
+// 基于数组的栈类
 export default class Stack {
   constructor() {
     this.items = [];

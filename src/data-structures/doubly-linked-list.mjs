@@ -2,6 +2,7 @@ import { defaultEquals } from "../../util.mjs";
 import { DoublyNode } from "./models/linked-list-models.mjs";
 import LinkedList from "./linked-list.mjs";
 
+// 双向链表类
 export default class DoublyLinkedList extends LinkedList{
   constructor(equalsFn = defaultEquals) {
     super(equalsFn);  // 调用LinkedList的构造函数

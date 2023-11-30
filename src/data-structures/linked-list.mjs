@@ -1,6 +1,7 @@
 import { defaultEquals } from "../../util.mjs";
 import { Node } from "./models/linked-list-models.mjs";
 
+// 链表类
 export default class LinkedList {
   constructor(equalsFn = defaultEquals) {
     this.count = 0;  // 记录链表元素个数

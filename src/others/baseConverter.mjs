@@ -3,7 +3,6 @@ import Stack from '../data-structures/stack.mjs';
 
 
 // 进制转换算法
-
 function baseConverter(decNumber, base) {
   const remStack = new Stack();
   const digits = '0123456789abcdefghijklmnopqrstuvwxyz';

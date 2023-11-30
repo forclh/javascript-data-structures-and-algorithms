@@ -1,4 +1,4 @@
-// 自定义集合类Set
+// 自定义集合类
 export default class Set {
   constructor() {
     this.items = {};

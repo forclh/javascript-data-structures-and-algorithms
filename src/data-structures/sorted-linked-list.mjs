@@ -1,7 +1,7 @@
 import LinkedList from "./linked-list.mjs";
 import { defaultCompare, Compare, defaultEquals } from "../../util.mjs";
 
-// 有序链表
+// 有序链表类
 export default class SortedLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals, compareFn = defaultCompare) {
     super(equalsFn);

@@ -2,7 +2,7 @@ import { defaultEquals } from "../../util.mjs";
 import LinkedList from "./linked-list.mjs";
 import { Node } from "./models/linked-list-models.mjs";
 
-
+// 循环链表类
 export default class CircleLinkedList extends LinkedList{
   constructor(equalsFn = defaultEquals) {
     super(equalsFn);

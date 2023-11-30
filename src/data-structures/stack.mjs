@@ -1,4 +1,4 @@
-// 基于对象的Stack类
+// 基于对象的栈类
 export default class Stack {
   constructor() {
     this.items = {};

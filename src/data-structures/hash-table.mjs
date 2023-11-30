@@ -16,7 +16,7 @@ export default class HashTable {
     for(let i = 0; i < tableKey.length; i++) {
       hash += tableKey.charCodeAt(i);
     }
-    return hash & 37;
+    return hash % 37;
   }
   // 哈希编码
   hashCode(key) {
@@ -34,7 +34,7 @@ export default class HashTable {
   }
   // 获取值
   get(key) {
-    const valuePair = this.table[this.hashCode[key]];
+    const valuePair = this.table[this.hashCode(key)];
     return valuePair == null ? undefined : valuePair.value;
   }
   // 移除值
@@ -46,6 +46,30 @@ export default class HashTable {
       return true;
     }
     return false;
+  }
+  // 获取哈希表
+  getTable() {
+    return this.table;
+  }
+  // 哈希表大小
+  size() {
+    return Object.keys(this.table).length;
+  }
+  // 哈希表是否为空
+  isEmpty() {
+    return this.size() === 0;
+  }
+  // 打印哈希表
+  toString() {
+    if(this.isEmpty()) {
+      return '';
+    }
+    const keys = Object.keys(this.table);
+    let objString = `${keys[0]} => ${this.table[keys[0]].toString()}`;
+    for(let i = 1; i < keys.length; i++) {
+      objString = `${objString}, ${keys[i]} => ${this.table[keys[i]].toString()}`;
+    }
+    return objString;
   }
 
 }
