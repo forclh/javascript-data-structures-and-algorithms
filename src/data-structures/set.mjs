@@ -9,7 +9,7 @@ export default class Set {
   }
   // 添加元素，成功true，失败false
   add(element) {
-    if(!this.has(element)) {
+    if (!this.has(element)) {
       this.items[element] = element;
       return true;
     }
@@ -17,7 +17,7 @@ export default class Set {
   }
   // 删除元素，成功true，失败false
   delete(element) {
-    if(this.has(element)) {
+    if (this.has(element)) {
       delete this.items[element];
       return true;
     }
@@ -34,9 +34,9 @@ export default class Set {
   // 适用所有浏览器的size方法
   sizeLegazy() {
     let count = 0;
-    for(let key in this.items) {
+    for (let key in this.items) {
       // TODO 使用has一样吗
-      if(this.items.hasOwnProperty(key)) {
+      if (this.items.hasOwnProperty(key)) {
         count++;
       }
     }
@@ -49,9 +49,9 @@ export default class Set {
   // 适配所有浏览器的values方法
   valuesLegacy() {
     let values = [];
-    for(let key in this.items) {
+    for (let key in this.items) {
       // TODO 使用has一样吗
-      if(this.items.hasOwnProperty(key)) {
+      if (this.items.hasOwnProperty(key)) {
         values.push(key);
       }
     }
@@ -91,12 +91,12 @@ export default class Set {
     const otherValues = otherSet.values();
     let biggerSet = values;
     let smallerSet = otherValues;
-    if(values.length - otherValues.length < 0) {
+    if (values.length - otherValues.length < 0) {
       biggerSet = otherValues;
       smallerSet = values;
     }
     smallerSet.forEach(value => {
-      if(biggerSet.includes(value)) {
+      if (biggerSet.includes(value)) {
         intersectionSet.add(value);
       }
     });
@@ -106,7 +106,7 @@ export default class Set {
   difference(otherSet) {
     const differenceSet = new Set();
     this.values().forEach(value => {
-      if(!otherSet.has(value)) {
+      if (!otherSet.has(value)) {
         differenceSet.add(value);
       }
     });
@@ -115,12 +115,12 @@ export default class Set {
   // 子集
   isSubsetOf(otherSet) {
     // 判断集合大小
-    if(this.size() > otherSet.size()) {
+    if (this.size() > otherSet.size()) {
       return false;
     }
     let isSubset = true;
     this.values().every(value => {
-      if(!otherSet.has(value)) {
+      if (!otherSet.has(value)) {
         isSubset = false;
         return false;  // !只会跳出迭代，不会返回函数
       }
@@ -138,12 +138,12 @@ export default class Set {
   }
   // 打印集合
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     const values = this.values();
     let objString = `${values[0]}`;
-    for(let i = 1; i < values.length; i++) {
+    for (let i = 1; i < values.length; i++) {
       objString = `${objString}, ${values[i].toString()}`;
     }
     return objString;

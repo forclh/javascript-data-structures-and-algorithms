@@ -9,13 +9,13 @@ export default class StackLinkedList {
     this.items.push(element);
   }
   pop() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return undefined;
     }
     return this.items.removeAt(this.size() - 1);
   }
   peek() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return undefined;
     }
     // return this.items.getElementAt(this.size() - 1).element;

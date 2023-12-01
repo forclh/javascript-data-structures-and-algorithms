@@ -11,10 +11,10 @@ export default class SortedLinkedList extends LinkedList {
   getIndexNextSortedElement(element) {
     let current = this.head;
     let i = 0;  // 记录插入位置的索引
-    for(; i < this.size(); i++) {
+    for (; i < this.size(); i++) {
       const comp = this.compareFn(element, current.element);
       // 升序
-      if(comp === Compare.LESS_THAN) {
+      if (comp === Compare.LESS_THAN) {
         return i;
       }
       current = current.next;
@@ -25,7 +25,7 @@ export default class SortedLinkedList extends LinkedList {
 
   // 插入元素（重构insert方法）
   insert(element, index = 0) {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return super.insert(element, index === 0 ? index : 0)  // 插入位置由内部决定，避免复写代码
     }
     const pos = this.getIndexNextSortedElement(element);
@@ -34,12 +34,12 @@ export default class SortedLinkedList extends LinkedList {
 
   // 添加元素（重构push方法）
   push(element) {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       super.push(element);
     } else {
       const pos = this.getIndexNextSortedElement(element);
       super.insert(element, pos);
-    }  
+    }
   }
 }
 

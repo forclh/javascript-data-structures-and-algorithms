@@ -14,7 +14,7 @@ export default class Dictionary {
   }
   // 设置字典和ValuePair类的键值
   set(key, value) {
-    if(key != null && value != null) {
+    if (key != null && value != null) {
       const tableKey = this.toStrFn(key);
       this.table[tableKey] = new ValuePair(key, value);  // 保留原始的key
       return true;
@@ -23,7 +23,7 @@ export default class Dictionary {
   }
   // 从字典中移除一个值
   remove(key) {
-    if(key != null) {
+    if (key != null) {
       const tableKey = this.toStrFn(key);
       delete this.table[tableKey];
       return true;
@@ -56,9 +56,9 @@ export default class Dictionary {
   // !用forEach迭代字典的每个键值对
   forEach(callbackFn) {
     const valuePairs = this.keyValues();
-    for(let i = 0; i < valuePairs.length; i++) {
+    for (let i = 0; i < valuePairs.length; i++) {
       const result = callbackFn(valuePairs[i].key, valuePairs[i].value);
-      if(result === false) {
+      if (result === false) {
         break;
       }
     }
@@ -77,12 +77,12 @@ export default class Dictionary {
   }
   // 打印字典内容
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     const valuePairs = this.keyValues();
     let objString = `${valuePairs[0].toString()}`
-    for(let i = 1; i < valuePairs.length; i++) {
+    for (let i = 1; i < valuePairs.length; i++) {
       objString = `${objString}, ${valuePairs[i].toString()}`;
     }
     return objString;

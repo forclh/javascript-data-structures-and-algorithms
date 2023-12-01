@@ -17,7 +17,7 @@ export default class Queue {
   }
   // 出队
   dequeue() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return undefined;
     }
     const result = this.item[this.lowestCount];
@@ -27,7 +27,7 @@ export default class Queue {
   }
   // 查看队列头元素
   peek() {
-    if(this.isEmpty) {
+    if (this.isEmpty) {
       return undefined;
     }
     return this.item[this.lowestCount];
@@ -43,11 +43,11 @@ export default class Queue {
     this.lowestCount = 0;
   }
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     let objString = `${this.item[this.lowestCount]}`;
-    for(let i = this.lowestCount + 1; i < this.count; i++) {
+    for (let i = this.lowestCount + 1; i < this.count; i++) {
       objString = `${objString}, ${this.item[i]}`;
     }
     return objString;

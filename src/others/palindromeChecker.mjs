@@ -5,7 +5,7 @@ import Deque from '../data-structures/deque.mjs';
 // 回文数检查
 function palindromeChecker(aString) {
   // 字符检查
-  if(aString === undefined || aString === null || (aString !== null && aString.length === 0)) {
+  if (aString === undefined || aString === null || (aString !== null && aString.length === 0)) {
     return false;
   }
   const deque = new Deque();
@@ -14,14 +14,14 @@ function palindromeChecker(aString) {
   let firstChar, lastChar;
   let isEqual = true;
   // 构建双端队列
-  for(let i = 0; i < lowerString.length; i++) {
+  for (let i = 0; i < lowerString.length; i++) {
     deque.addBack(lowerString.charAt(i));
   }
   // 回文数检查
-  while(deque.size() > 1 && isEqual) {
+  while (deque.size() > 1 && isEqual) {
     firstChar = deque.removeFront();
     lastChar = deque.removeBack();
-    if(firstChar !== lastChar) {
+    if (firstChar !== lastChar) {
       isEqual = false;
     }
   }

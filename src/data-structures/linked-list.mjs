@@ -11,25 +11,25 @@ export default class LinkedList {
   // 迭代链表找到目标索引的节点
   getElementAt(index) {
     // 索引越界
-    if(index < 0 || index >= this.count) {
+    if (index < 0 || index >= this.count) {
       return undefined;
     }
     let current = this.head;
-    for(let i = 0; i < index; i++) {
+    for (let i = 0; i < index; i++) {
       current = current.next;
     }
     return current;
-}
+  }
   // 向链表尾部添加元素
   push(element) {
     const node = new Node(element);
     // case1: 链表为空，使用==包含null和undefined的情况
-    if(this.head == null) {
+    if (this.head == null) {
       this.head = node;
     } else {
       // case2: 链表不为空
       let current = this.head;  // 记录链表中当前元素，用于迭代链表
-      while(current.next != null) {
+      while (current.next != null) {
         current = current.next;
       }
       current.next = node;
@@ -62,12 +62,12 @@ export default class LinkedList {
   // 重构removeAt
   removeAt(index) {
     // 检查索引越界
-    if(index < 0 || index >= this.count) {
+    if (index < 0 || index >= this.count) {
       return undefined;
     }
     // case1: 移除第一项
     let current = this.head;
-    if(index === 0) {
+    if (index === 0) {
       this.head = current.next;
     } else {
       // case2: 移除其他项
@@ -82,13 +82,13 @@ export default class LinkedList {
   // 插入元素到任意位置
   insert(element, index) {
     // 插入最后一个位置的时候，索引应该与链表的长度相等
-    if(index < 0 || index > this.count) {
+    if (index < 0 || index > this.count) {
       return false;  // 索引越界插入失败
     }
 
     const node = new Node(element);
     // case1: 开头插入
-    if(index === 0) {
+    if (index === 0) {
       node.next = this.head;
       this.head = node;
     } else {
@@ -105,8 +105,8 @@ export default class LinkedList {
   indexOf(element) {
     let current = this.head;
     // 为了确保不会发生运行时错误，验证current的变量是否为null或者undefined
-    for(let i = 0; i < this.count && current != null; i++) {
-      if(this.equalsFn(current.element, element)) {
+    for (let i = 0; i < this.count && current != null; i++) {
+      if (this.equalsFn(current.element, element)) {
         return i;
       }
       current = current.next;
@@ -136,12 +136,12 @@ export default class LinkedList {
 
   // 打印链表(将LinkedList对象转换为字符串)
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     let objString = `${this.head.element}`
     let current = this.head.next
-    for(let i = 1; i < this.size(); i++) {
+    for (let i = 1; i < this.size(); i++) {
       objString = `${objString} -> ${current.element}`;
       current = current.next;
     }

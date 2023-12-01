@@ -8,13 +8,13 @@ function decimalToBinary(decNumber) {
   let rem;
   let binaryString = '';
 
-  while(number > 0) {
+  while (number > 0) {
     rem = Math.floor(number % 2);
     remStack.push(rem);
     number = Math.floor(number / 2);
   }
 
-  while(!remStack.isEmpty()) {
+  while (!remStack.isEmpty()) {
     binaryString += remStack.pop();
   }
   return binaryString;

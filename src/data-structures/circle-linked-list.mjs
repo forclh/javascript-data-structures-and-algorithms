@@ -3,23 +3,23 @@ import LinkedList from "./linked-list.mjs";
 import { Node } from "./models/linked-list-models.mjs";
 
 // 循环链表类
-export default class CircleLinkedList extends LinkedList{
+export default class CircleLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals) {
     super(equalsFn);
   }
 
   // 在任意位置插入新元素
   insert(element, index) {
-    if(index < 0 || index > this.count) {
+    if (index < 0 || index > this.count) {
       return false;
     }
 
     const node = new Node(element);
     let current = this.head;
     // case1: 插入到第一个元素
-    if(index === 0) {
+    if (index === 0) {
       // case1.1: 链表为空
-      if(this.head == null) {
+      if (this.head == null) {
         this.head = node;
         node.next = this.head;
         // case1.2: 链表非空
@@ -28,7 +28,7 @@ export default class CircleLinkedList extends LinkedList{
         current = this.getElementAt(this.count - 1);  // 获取最后一个元素
         this.head = node;
         current.next = this.head;
-      } 
+      }
       // case2: 循环链表在最后插入和中间插入的逻辑一样，同链表
     } else {
       const previous = this.getElementAt(index - 1);
@@ -41,14 +41,14 @@ export default class CircleLinkedList extends LinkedList{
 
   // 从任意位置移除元素
   removeAt(index) {
-    if(index < 0 || index >= this.count) {
+    if (index < 0 || index >= this.count) {
       return undefined;
     }
-    let current =  this.head;
+    let current = this.head;
     // case1: 删除第一个元素
-    if(index === 0) {
+    if (index === 0) {
       // case1.1: 链表只有一个元素
-      if(this.size() === 1) {
+      if (this.size() === 1) {
         this.head = undefined;
         // case1.2: 链表不止一个元素（需要考虑尾元素的next指针）
       } else {
@@ -72,7 +72,7 @@ export default class CircleLinkedList extends LinkedList{
   push(element) {
     const node = new Node(element);
     let current;
-    if(this.head == null) {
+    if (this.head == null) {
       this.head = node;
     } else {
       current = this.getElementAt(this.size() - 1);

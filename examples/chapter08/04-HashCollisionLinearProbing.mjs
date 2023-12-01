@@ -1,4 +1,4 @@
-const { HashTableLinearProbing } = PacktDataStructuresAlgorithms;
+import HashTableLinearProbing from "../../src/data-structures/hash-table-linear-probing.mjs";
 
 const hashTable = new HashTableLinearProbing();
 

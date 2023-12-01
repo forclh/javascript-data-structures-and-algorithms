@@ -24,9 +24,9 @@ export default class HashTableSeparateChaining {
   }
   // 添加键值对
   put(key, value) {
-    if(key != null && value != null) {
+    if (key != null && value != null) {
       const position = this.hashCode(key);
-      if(this.table[position] == null) {
+      if (this.table[position] == null) {
         this.table[position] = new LinkedList();
       }
       this.table[position].push(new ValuePair(key, value));
@@ -39,10 +39,10 @@ export default class HashTableSeparateChaining {
     const positon = this.hashCode(key);
     const linkedList = this.table[positon];
     // 链表存在且非空
-    if(linkedList != null  && !linkedList.isEmpty()) {
+    if (linkedList != null && !linkedList.isEmpty()) {
       let current = linkedList.getHead();
-      while(current != null) {
-        if(current.element.key === key) {
+      while (current != null) {
+        if (current.element.key === key) {
           return current.element.value
         }
         current = current.next;
@@ -54,13 +54,13 @@ export default class HashTableSeparateChaining {
   remove(key) {
     const position = this.hashCode(key);
     const linkedList = this.table[position];
-    if(linkedList != null && !linkedList.isEmpty()) {
+    if (linkedList != null && !linkedList.isEmpty()) {
       let current = linkedList.getHead();
-      while(current != null) {
-        if(current.element.key === key) {
+      while (current != null) {
+        if (current.element.key === key) {
           linkedList.remove(current.element);
           // 删除后判断链表是否非空（是否删除了最后一个元素）
-          if(linkedList.isEmpty()) {
+          if (linkedList.isEmpty()) {
             delete this.table[position];
           }
           return true;
@@ -92,12 +92,12 @@ export default class HashTableSeparateChaining {
   }
   // 打印散列表
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     const keys = Object.keys(this.table);
     let objString = `${keys[0]} => ${this.table[keys[0]].toString()}`;
-    for(let i = 1; i < keys.length; i++) {
+    for (let i = 1; i < keys.length; i++) {
       objString = `${objString}, ${keys[i]} => ${this.table[keys[i]].toString()}`;
     }
     return objString;

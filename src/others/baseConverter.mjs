@@ -10,16 +10,16 @@ function baseConverter(decNumber, base) {
   let number = decNumber;
   let baseString = '';
 
-  if((base < 2) || (base > 36)) {
+  if ((base < 2) || (base > 36)) {
     return '';
   }
-  while(number !== 0) {
+  while (number !== 0) {
     rem = Math.floor(number % base);
     remStack.push(rem);
     number = Math.floor(number / base);
   }
 
-  while(!remStack.isEmpty()) {
+  while (!remStack.isEmpty()) {
     baseString += digits[remStack.pop()];
   }
   return baseString;

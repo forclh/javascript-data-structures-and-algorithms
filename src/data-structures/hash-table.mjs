@@ -8,15 +8,24 @@ export default class HashTable {
   }
   // 散列函数（哈希函数）
   loseloseHashCode(key) {
-    if(typeof key === 'number') {
+    if (typeof key === 'number') {
       return key;
     }
     const tableKey = this.toStrFn(key);
     let hash = 0;
-    for(let i = 0; i < tableKey.length; i++) {
+    for (let i = 0; i < tableKey.length; i++) {
       hash += tableKey.charCodeAt(i);
     }
     return hash % 37;
+  }
+  // !djb2散列函数
+  djb2HashCode(key) {
+    const tableKey = this.toStrFn(key);
+    let hash = 5381;
+    for (let i = 0; i < tableKey.length; i++) {
+      hash = (hash * 3) + tableKey.charCodeAt(i);
+    }
+    return hash % 1013;
   }
   // 哈希编码
   hashCode(key) {
@@ -25,7 +34,7 @@ export default class HashTable {
 
   // 增加项
   put(key, value) {
-    if(key != null && value != null) {
+    if (key != null && value != null) {
       const position = this.hashCode(key);
       this.table[position] = new ValuePair(key, value);
       return true;
@@ -41,7 +50,7 @@ export default class HashTable {
   remove(key) {
     const hash = this.hashCode(key);
     const valuePair = this.table[hash];
-    if(valuePair != null) {  // 可能key不存在
+    if (valuePair != null) {  // 可能key不存在
       delete this.table[hash];
       return true;
     }
@@ -61,12 +70,12 @@ export default class HashTable {
   }
   // 打印哈希表
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     const keys = Object.keys(this.table);
     let objString = `${keys[0]} => ${this.table[keys[0]].toString()}`;
-    for(let i = 1; i < keys.length; i++) {
+    for (let i = 1; i < keys.length; i++) {
       objString = `${objString}, ${keys[i]} => ${this.table[keys[i]].toString()}`;
     }
     return objString;

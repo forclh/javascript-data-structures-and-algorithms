@@ -3,7 +3,7 @@ import { DoublyNode } from "./models/linked-list-models.mjs";
 import LinkedList from "./linked-list.mjs";
 
 // 双向链表类
-export default class DoublyLinkedList extends LinkedList{
+export default class DoublyLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals) {
     super(equalsFn);  // 调用LinkedList的构造函数
     this.tail = undefined;
@@ -11,15 +11,15 @@ export default class DoublyLinkedList extends LinkedList{
   // 在任意位置插入元素
   insert(element, index) {
     // 索引越界检查
-    if(index < 0 || index > this.count) {
+    if (index < 0 || index > this.count) {
       return false;
     }
     const node = new DoublyNode(element);
     let current;
     // case1: 插入到第一个
-    if(index === 0) {
+    if (index === 0) {
       // case1.1: 双向链表为空
-      if(this.head == null) {
+      if (this.head == null) {
         this.head = node;
         this.tail = node;
       } else {
@@ -30,7 +30,7 @@ export default class DoublyLinkedList extends LinkedList{
         this.head = node;  // 更新头指针
       }
       // case2: 插入到最后一个
-    } else if(index === this.count) {
+    } else if (index === this.count) {
       current = this.tail;  // 定义当前聚焦的元素
       current.next = node;
       node.prev = current;
@@ -50,23 +50,23 @@ export default class DoublyLinkedList extends LinkedList{
 
   // 从任意位置移除元素
   removeAt(index) {
-    if(index < 0 || index >= this.count) {
+    if (index < 0 || index >= this.count) {
       return undefined;
     }
 
     let current;  // 定义焦点节点
     // case1: 移除第一个元素
-    if(index === 0) {
+    if (index === 0) {
       current = this.head;
       this.head = current.next;
       // case1.1: 只有一个元素，被删除后需要调整tail指针
-      if(this.count === 1) { 
+      if (this.count === 1) {
         this.tail = undefined;
       } else {
         this.head.prev = undefined;
       }
       // case2: 移除最后一个元素
-    } else if(index === this.count - 1) {
+    } else if (index === this.count - 1) {
       current = this.tail;
       this.tail = current.prev;
       this.tail.next = undefined;
@@ -85,7 +85,7 @@ export default class DoublyLinkedList extends LinkedList{
   push(element) {
     const node = new DoublyNode(element);
     // case1：空双向链表
-    if(this.head == null) {
+    if (this.head == null) {
       this.head = node;
       this.tail = node;
       // case2：非空双向链表
@@ -101,8 +101,8 @@ export default class DoublyLinkedList extends LinkedList{
   indexOf(element) {
     let current = this.head;
     let index = 0;
-    while(current != null) {
-      if(this.equalsFn(current.element, element)) {
+    while (current != null) {
+      if (this.equalsFn(current.element, element)) {
         return index;
       }
       index++;
@@ -129,12 +129,12 @@ export default class DoublyLinkedList extends LinkedList{
 
   // 打印双向链表
   toString() {
-    if(this.head == null) {
+    if (this.head == null) {
       return '';
     }
     let objString = `${this.head.element}`;
     let current = this.head.next;
-    while(current != null) {
+    while (current != null) {
       objString = `${objString} -> ${current.element}`;
       current = current.next;
     }
@@ -143,12 +143,12 @@ export default class DoublyLinkedList extends LinkedList{
 
   // 反向打印双向链表
   inverseToString() {
-    if(this.tail == null) {
+    if (this.tail == null) {
       return '';
     }
     let objString = `${this.tail.element}`;
     let current = this.tail.prev;
-    while(current != null) {
+    while (current != null) {
       objString = `${objString} -> ${current.element}`;
       current = current.prev;
     }

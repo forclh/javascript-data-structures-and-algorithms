@@ -10,8 +10,8 @@ function hotPotato(elementList, num) {
     queue.enqueue(elementList[i]);
   }
 
-  while(queue.size() > 1) {
-    for(let i = 0; i < num; i++) {
+  while (queue.size() > 1) {
+    for (let i = 0; i < num; i++) {
       queue.enqueue(queue.dequeue());
     }
     eliminatedList.push(queue.dequeue());

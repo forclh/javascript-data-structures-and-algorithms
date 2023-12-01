@@ -15,7 +15,7 @@ export default class Stack {
     return this.count;
   }
   pop() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return undefined;
     }
     this.count--;
@@ -31,11 +31,11 @@ export default class Stack {
     this.count = 0;
   }
   toString() {
-    if(this.isEmpty()) {
+    if (this.isEmpty()) {
       return '';
     }
     let objString = `${this.items[0]}`;
-    for(let i = 1; i < this.count; i++) {
+    for (let i = 1; i < this.count; i++) {
       objString = `${objString}, ${this.items[i]}`;
     }
     return objString;
