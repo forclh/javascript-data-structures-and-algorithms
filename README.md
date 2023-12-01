@@ -24,3 +24,6 @@
 1. [自定义字典](./src/data-structures/dictionary.mjs)
 ## 散列表（哈希表）
 1. [散列表](./src/data-structures/hash-table.mjs)
+2. [散列表：分离链接](./src/data-structures/hash-table-separate-chaining.mjs)
+2. [散列表：线性探测1]
+3. [散列表：线性探测2](./src/data-structures/hash-table-linear-probing.mjs)
