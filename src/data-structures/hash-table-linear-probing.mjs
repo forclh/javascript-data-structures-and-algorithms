@@ -1,7 +1,7 @@
 import { defaultToString } from "../../util.mjs";
 import ValuePair from "./models/value-pair.mjs";
 
-// 使用线性探查技术解决哈希冲突
+// 使用线性探测移动元素解决哈希冲突
 export default class HashTableLinearProbing {
   constructor(toStrFn = defaultToString) {
     this.toStrFn = toStrFn;

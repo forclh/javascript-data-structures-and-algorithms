@@ -41,7 +41,7 @@ console.log(new Set([...setA, ...setB]));  // 通过传入数组初始化Set
 const intersection = (setA, setB) => {
   const intersectionSet = new Set();
   setA.forEach(value => {
-    if(setB.has(value)) {
+    if (setB.has(value)) {
       intersectionSet.add(value);
     }
   });
@@ -57,7 +57,7 @@ console.log(new Set([...setA].filter(value => setB.has(value))));
 const difference = (setA, setB) => {
   const differenceSet = new Set();
   setA.forEach(value => {
-    if(!setB.has(value)) {
+    if (!setB.has(value)) {
       differenceSet.add(value);
     }
   });

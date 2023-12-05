@@ -20,10 +20,14 @@
 4. [有序链表](./src/data-structures/sorted-linked-list.mjs)
 ## 集合
 1. [自定义集合](./src/data-structures/set.mjs)
+2. [ES6-Set](./examples/chapter07/03-ES6Set.mjs)
+3. [ES6-WeakSet](./examples/chapter08/07-ES6WeakSet.mjs)
 ## 字典
 1. [自定义字典](./src/data-structures/dictionary.mjs)
+2. [ES6-Map](./examples/chapter08/05-ES6Map.mjs)
+3. [ES6-WeakMap](./examples/chapter08/06-ES6WeakMap.mjs)
 ## 散列表（哈希表）
 1. [散列表](./src/data-structures/hash-table.mjs)
 2. [散列表：分离链接](./src/data-structures/hash-table-separate-chaining.mjs)
-3. [散列表：线性探测1]
-4. [散列表：线性探测2](./src/data-structures/hash-table-linear-probing.mjs)
+3. 散列表：线性探测-软删除
+4. [散列表：线性探测-移动元素](./src/data-structures/hash-table-linear-probing.mjs)
