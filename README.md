@@ -35,4 +35,4 @@
 1. [计算阶乘](./examples/chapter09/02-Factorial.mjs)
 2. [斐波那契数列](./examples/chapter09/04-Fibonacci.mjs)
 ## 树
-1. [二叉搜索树]
+1. [二叉搜索树](./src/data-structures/binary-search-tree.mjs)
