@@ -31,3 +31,8 @@
 2. [散列表：分离链接](./src/data-structures/hash-table-separate-chaining.mjs)
 3. 散列表：线性探测-软删除
 4. [散列表：线性探测-移动元素](./src/data-structures/hash-table-linear-probing.mjs)
+## 递归
+1. [计算阶乘](./examples/chapter09/02-Factorial.mjs)
+2. [斐波那契数列](./examples/chapter09/04-Fibonacci.mjs)
+## 树
+1. [二叉搜索树]
